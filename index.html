@@ -2,17 +2,20 @@
 <html lang="en">
 
 	<head>
+		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
   		<link rel="shortcut icon" type="image/x-icon" href="res/D_Logo.ico" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="app.js"></script>
 		<script type="text/javascript">
 			//Hamburger Menu Toggle
 			$(document).ready(function(){
 				$('.icon').click(function(){
 					$('.icon').toggleClass('active');
-					$('#menu-bg').toggleClass('hide-menu');
+					$('#menu-bg').toggleClass('hide-menu-items');
+					$('#overlay').toggleClass('hide-menu');
 				})
 			})
 		</script>
@@ -28,6 +31,7 @@
 	</head>
 	<body>
 
+		<div id="overlay" class="hide-menu"></div>
 		<div id="mid-section">
 			<div class="banner">
 				<img class="top-img" src="res/DuCane_Logo.jpg">
@@ -36,37 +40,85 @@
 			<div class="row">
 				<div class="col-xs-1 text-right;">
 				</div>
-				<div class="col-xs-4 text-right;">
+				<div class="col-xs-2 text-right;">
 					
 					<div class="icon">
 						<div class="hamburger"></div>
 					</div>
 					
-					<div class="menu-overlay hide-menu" id="menu-bg">
-						<div class="menu-item-overlay" id="menu-contents">
-							<div id="menu">
-								<br><br>
-								<div class="nav-link on-focus" id="music_btn2">
-									<a class="navlinks" id="load_music" onclick="loadContent('music2',1)" href="javascript:void(0);">
-										Peak (Pilsner)</a>
-								</div>
-								<br><br>
-								<div class="nav-link" id="photo_btn2">
-									<a class="navlinks" id="load_photos" onclick="loadContent('photo2',1)" href="javascript:void(0);">
-										Hut (IPA)</a>
-								</div>
-								<br><br>
-								<div class="nav-link" id="contact_btn2">
-									<a class="navlinks" id="load_contact" onclick="loadContent('contact2',1)" href="javascript:void(0);">
-										Contact Us</a>
-								</div>
-								<br>
-							</div>
-						</div>
+				</div>
+				<div class="col-xs-2 text-right;">
+				</div>
+				<div class="col-xs-4 text-right;">
+					<div class="menu-overlay hide-menu-items" id="menu-bg">
+						<a class="navlinks" id="load_home" onclick="loadContent('home')" href="javascript:void(0);">
+							Home</a>
+						<br><br>
+						<a class="navlinks" id="load_peak" onclick="loadContent('peak')" href="javascript:void(0);">
+							Peak (Pilsner)</a>
+						<br><br>
+						<a class="navlinks" id="load_hut" onclick="loadContent('hut')" href="javascript:void(0);">
+							Hut (IPA)</a>
+						<br><br>
+							<a class="navlinks" id="load_contact-us" onclick="loadContent('contact-us')" href="javascript:void(0);">
+								Contact Us</a>
 					</div>
 
 				</div>
-				<div class="col-xs-7;">
+				<div class="col-xs-3 spacer">
+				</div>
+			</div>
+			
+			<div class="row" id="home">
+				<div class="col-xs-2 text-right;">
+				</div>
+				<div class="col-xs-8 content">
+					<h1> Home</h1>
+					Locally brewed in Tasmania!
+				</div>
+				<div class="col-xs-2">
+				</div>
+			</div>
+
+
+			<div class="row hide-content" id="peak">
+				<div class="col-xs-2 text-right;">
+				</div>
+				<div class="col-xs-8 content">
+					<h1> Peak Pilsner</h1>
+					<div class="beer-art">
+						<img src="res/PeakBeer.png" />
+					</div>
+					Light. Crisp. Delicious.
+				</div>
+				<div class="col-xs-2">
+				</div>
+			</div>
+
+
+			<div class="row hide-content" id="hut">
+				<div class="col-xs-2 text-right;">
+				</div>
+				<div class="col-xs-8 content">
+					<h1> Hut IPA </h1>
+					<div class="beer-art">
+						<img src="res/HutBeer.png" />
+					</div>
+					A wonderful pale ale full of flavour.
+				</div>
+				<div class="col-xs-2">
+				</div>
+			</div>
+
+
+			<div class="row hide-content" id="contact-us">
+				<div class="col-xs-2 text-right;">
+				</div>
+				<div class="col-xs-8 content">
+					<h1> Contact us </h1>
+					<a href="mailto:wvhoran@gmail.com">wvhoran@gmail.com</a>
+				</div>
+				<div class="col-xs-2">
 				</div>
 			</div>
 
@@ -79,7 +131,7 @@
 
 		</div>
 					
-		<script src="app.js"></script>
+		<!--script src="app.js"></script-->
 
 
 	</body>
